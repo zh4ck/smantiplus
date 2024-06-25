@@ -101,8 +101,22 @@ Jalankan migrasi dan seed database:
 ```bash
 php artisan migrate --seed
 ```
+### 9. Seed Role
 
-### 9. Jalankan Server Pengembangan
+Jalankan seed database:
+
+```bash
+php artisan db:seed --class=RoleSeeder
+```
+### 10. Seed Akun Admin
+
+Jalankan seed berikut untuk membuat akun admin default yang berada di folder database>seeders>AdminSeeder.php:
+
+```bash
+php artisan db:seed --class=AdminSeeder
+```
+
+### 11. Jalankan Server Pengembangan
 
 Jalankan server pengembangan Laravel:
 
@@ -112,7 +126,7 @@ php artisan serve
 
 Akses aplikasi di `http://localhost:8000`.
 
-### 10. Compile Aset Front-end
+### 12. Compile Aset Front-end
 
 Compile aset front-end menggunakan npm:
 

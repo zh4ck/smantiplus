@@ -95,6 +95,8 @@ Route::middleware('auth:administrator,student')->group(function () {
         Route::get('/requestRoleList', [UserController::class,'requestRoleList']);
         Route::put('/requestRole-approve/{slug}',[UserController::class,'approveRequest']);
 
+        Route::post('/change-password-admin', [AdminController::class,'changePassword']);
+
         Route::middleware('OnlyAdmin')->group(function () {
             Route::get('/users-grid', [UserController::class,'index']);
             Route::get('/users-list', [UserController::class,'list']);

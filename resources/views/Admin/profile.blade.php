@@ -55,12 +55,56 @@
 
                             <div class="d-grid">
                                 <a href="/edit-profile-admin" class="btn btn-outline-primary mb-2">Edit Profile</a>
+                                <a class="btn btn-outline-dark mb-2 me-2" data-bs-toggle="collapse"
+                                    href="#collapseChangePassword" role="button" aria-expanded="false"
+                                    aria-controls="collapseChangePassword">Ganti Password</a>
                                 <a href="/dashboard" class="btn btn-outline-secondary">Kembali</a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+            <form action="/change-password-admin" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="collapse my-3" id="collapseChangePassword">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="currentPassword" required>Password Lama</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="currentPassword" class="form-control" name="current_password"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        aria-describedby="password" required />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="newPassword" required>Password Baru</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="newPassword" class="form-control" name="new_password"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        aria-describedby="password" required />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="repeatPassword" required>Konfirmasi
+                                    Password</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="repeatPassword" class="form-control"
+                                        name="repeat_password"
+                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                        aria-describedby="password" required />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-dark d-grid w-100" type="submit">Simpan Password
+                                Baru</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection

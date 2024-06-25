@@ -222,4 +222,27 @@ class AdminController extends Controller
         
         return redirect('/profile-admin')->with(['messageSuccess' => 'Profile Berhasil Diperbarui']);
     }
+
+    public function changePassword(Request $request) 
+    {
+        $validated = $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|min:8',
+        ]);
+
+        $admin = Auth::guard('administrator')->user();
+
+        if (!Hash::check($request->current_password, $admin->password)) {
+            return redirect()->back()->with(['message' => 'Password Lama Tidak Sesuai']);
+        }
+        if ($request->new_password != $request->repeat_password) {
+            return redirect()->back()->with(['message' => 'Konfirmasi Password Tidak Sesuai']);
+        }
+
+        $admin->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return redirect()->back()->with(['messageSuccess' => 'Password Berhasil Diperbarui']);
+    }
 }
