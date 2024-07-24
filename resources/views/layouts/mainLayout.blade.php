@@ -11,7 +11,7 @@
     <title>@yield('title') | OSIS SMANTI</title>
 
     <meta name="description" content="" />
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/assets/img/logo.png') }}" />
@@ -29,7 +29,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="{{ asset('assets/assets/vendor/fonts/boxicons.css') }}" />
-
+    
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{ asset('assets/assets/vendor/css/core.css') }}"
@@ -394,6 +394,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
         integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
