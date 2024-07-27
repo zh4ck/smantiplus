@@ -7,11 +7,15 @@
     "routes": [
         {
             "src": "/storage/(.*)",
-            "dest": "./storage/"
+            "dest": "/storage/"
+        },
+        {
+            "src": "/app/(.*)",
+            "dest": "/public/app/"
         },
         {
             "src": "/img/(.*)",
-            "dest": "public/img/"
+            "dest": "/public/img/"
         },
         {
             "src": "/assets/(.*)",
