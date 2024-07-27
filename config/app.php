@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('https://smantiplus.vercel.app/', 'http://localhost'),
+    'url' => env('https://c560-182-2-143-211.ngrok-free.app', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 
